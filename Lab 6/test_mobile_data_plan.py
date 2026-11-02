@@ -66,3 +66,6 @@ def test_grace_period():
 
 def test_expired():
     assert validity_status(-16, True, False) == "expired"
+
+def test_premium_plan_at_included_limit():
+    assert overage_charge("premium", 10, False, False) == 0
